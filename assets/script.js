@@ -85,17 +85,20 @@ function callback(results, status) {
       });
       var infowindow = new google.maps.InfoWindow({
           title: place.name,
-          content: '<div id="content">'+
-          '<h1>'+ place.name +'</h1>' +
-          '<h3>'+ place.formatted_address +'</h3>' +
-          '</div>',
           maxWidth: 200,
       })
-      marker.addListener('click', function() {
-        infowindow.open(map, marker);
-      });
+    
+      var content = '<div id="content">'+
+      '<h1>'+ place.name +'</h1>' +
+      '<h3>'+ place.formatted_address +'</h3>' +
+      '</div>';
 
-    //   createMarker(results[i]);
+      google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
+        return function() {
+            infowindow.setContent(content);
+            infowindow.open(map,marker);
+        };
+        })(marker,content,infowindow)); 
       
     }
   }
