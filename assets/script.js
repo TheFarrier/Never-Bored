@@ -45,6 +45,7 @@ function callback(results, status) {
         title: place.name,
       });
       var infowindow = new google.maps.InfoWindow({
+          title: place.name,
           content: '<div id="content">'+
           '<h1>'+ place.name +'</h1>' +
           '<h3>'+ place.formatted_address +'</h3>' +
