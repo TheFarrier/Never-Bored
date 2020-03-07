@@ -36,6 +36,7 @@ $(".busywork").on('click', function(){
 });
 //-- function for the input box --//
 
+var boredResponse;
 
 function callBored(){
     var queryURL = "http://www.boredapi.com/api/activity/";
@@ -47,6 +48,7 @@ $.ajax({
     
 .then(function(response) {
     console.log(response);
+    boredResponse = response;
 });
 }
 
@@ -54,28 +56,42 @@ $.ajax({
 var map;
 var service;
 var infowindow;
+var address = '78253';
+var local;
 
 function initialize() {
-  var pyrmont = new google.maps.LatLng(-33.8665433,151.1956316);
+  var geocoder = new google.maps.Geocoder();
+  
+  geocoder.geocode({'address': address}, function(results){
+    console.log(results);
+    local = results[0].geometry.location
+    console.log(local);
 
-  map = new google.maps.Map(document.getElementById('map'), {
-      center: pyrmont,
-      zoom: 15
+    map = new google.maps.Map(document.getElementById('map'), {
+      center: local,
+      zoom: 11,
     });
 
   var request = {
-    location: pyrmont,
+    location: local,
     radius: '500',
-    query: 'restaurant'
+    query: boredResponse.activity,
   };
 
   service = new google.maps.places.PlacesService(map);
   service.textSearch(request, callback);
+
+  });
+
+  
 }
 
+var failcount = 0;
+
 function callback(results, status) {
-  if (status == google.maps.places.PlacesServiceStatus.OK) {
-    for (var i = 0; i < results.length; i++) {
+  
+  if (status == google.maps.places.PlacesServiceStatus.OK && results != null && failcount <= 1) {
+    for (var i = 0; i < results.length && i< 10; i++) {
       var place = results[i];
       console.log(place);
       var marker = new google.maps.Marker({
@@ -101,7 +117,18 @@ function callback(results, status) {
         })(marker,content,infowindow)); 
       
     }
-  }
+  } else if (failcount === 0){
+    failcount = 1;
+    request = {
+      location: local,
+      radius: '500',
+      query: "busyworksdfa",
+    };
+    service.textSearch(request, callback);
+  } else {
+    alert("No locations found")
+  };
+
 }
 // ---------------------------------------Google Maps----------------------------------
 callBored();
