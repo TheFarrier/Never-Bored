@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--materialize-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <title>Simple Map</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
@@ -9,17 +11,38 @@
        * element that contains the map. */
       #map {
         height: 100%;
+        width: 100%;
+        
       }
-      /* Optional: Makes the sample page fill the window. */
+      /*Optional: Makes the sample page fill the window. 
       html, body {
         height: 100%;
         margin: 0;
         padding: 0;
+      }*/
+
+      #banner {
+        padding: 20px;
       }
+      .container {
+        display:block;
+        height: 500px;
+        width: 500px;
+      }
+
+     
     </style>
   </head>
+
   <body>
-    <div id="map"></div>
+    <div class="center-align teal lighten-2 z-depth-2" id="banner"><h1>Ready to kill some time?</h1></div>
+    <div class="container center-align">
+      <h3 id="randomActivity">Try this: Learn to play a new instrument.</h3>
+      <h4>Here are some places you can go try.</h4>
+      <div class="left" id="map"></div>
+    </div>
+    
+    
     <!-- <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrFx8v_GDWLBsK5ji8OA4f4XAWUSqsDz0&callback=initMap"
     async defer></script> -->
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrFx8v_GDWLBsK5ji8OA4f4XAWUSqsDz0&libraries=places"></script>
