@@ -1,4 +1,15 @@
+//sound effects for when an activity buttons is selected
+var selectedBtn = $(".btn-large");
+//event listener for button click
 
+console.log(document.parentElement);
+
+selectedBtn.click(function btnSelected () {
+  $("audio#click")[0].play()
+  $(this).removeClass("waves-light")
+  $(this).addClass("lime lighten-1")
+ })
+ 
 //-- function for when the educational button is clicked --//
 $(".educational").on('click', function(){
   alert("education");
