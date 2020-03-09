@@ -1,9 +1,13 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <!--google fonts-->
+    <link href="https://fonts.googleapis.com/css2?family=Poor+Story&display=swap" rel="stylesheet">
+    <!--css animate-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!--materialize-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
-    <title>Simple Map</title>
+    <title>Never Bored! Results</title>
     <meta name="viewport" content="initial-scale=1.0">
     <meta charset="utf-8">
     <style>
@@ -12,6 +16,7 @@
       #map {
         height: 100%;
         width: 100%;
+        border: solid 2px teal; 
         
       }
       /*Optional: Makes the sample page fill the window. 
@@ -29,17 +34,17 @@
         height: 500px;
         width: 500px;
       }
-
-     
     </style>
   </head>
 
   <body>
-    <div class="center-align teal lighten-2 z-depth-2" id="banner"><h1>Ready to kill some time?</h1></div>
+    <div class="center-align teal lighten-2 z-depth-2" id="banner">
+      <span class="white-text"><h1>Ready to kill some time?</h1></span>
+    </div>
     <div class="container center-align">
-      <h3 id="randomActivity">Try this: Learn to play a new instrument.</h3>
-      <h4>Here are some places you can go try.</h4>
-      <div class="left" id="map"></div>
+      <h3 class="animated infinite pulse delay-2s" id="randomActivity">Try this: Learn to play a new instrument.</h3>
+      <h5>Here are some places you can go try it out.</h5>
+      <div id="map"></div>
     </div>
     
     

@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!--materialze-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--font awesome-->
@@ -14,23 +16,22 @@
 
 <body>
 
-    <h1 align="center">Never Be Bored Again!</h1>
+    <h1 align="center" class="animated flip delay-2s headerTitle">Never Be Bored Again!</h1>
 <div class="container activityTypes">
+    <h5 >Choose an activity type.</h5>
         <div align="center" class="row">
             <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Educational <i class="fas fa-school"></i></a>
+                <a id="eduSound" class="waves-effect waves-light btn-large">Educational <i class="fas fa-school"></i></a>
             </div>
             <div class="col s4 types">
                 <a class="waves-effect waves-light btn-large">Recreational <i class="fas fa-running"></i></a>
             </div>
             <div class="col s4 types">
                 <a class="waves-effect waves-light btn-large">Social <i class="fas fa-user-friends"></i></a>
-
             </div>
         </div>
         <div align="center" class="row">
             <div class="col s4 types">
-
                 <a class="waves-effect waves-light btn-large">DIY <i class="fas fa-tools"></i></a>
             </div>
             <div class="col s4 types">
@@ -38,12 +39,10 @@
             </div>
             <div class="col s4 types">
                 <a class="waves-effect waves-light btn-large">Cooking <i class="fas fa-utensils"></i></a>
-
             </div>
         </div>
         <div align="center" class="row">
             <div class="col s4 types">
-
                 <a class="waves-effect waves-light btn-large">Relaxation <i class="fas fa-peace"></i></a>
             </div>
             <div class="col s4 types">
@@ -51,7 +50,6 @@
             </div>
             <div class="col s4 types">
                 <a class="waves-effect waves-light btn-large">Busywork <i class="fas fa-user-clock"></i></a>
-
             </div>
         </div>
         <div class="row">
@@ -60,7 +58,6 @@
                 <label for="zip-code">Enter Your Zip</label>
             </div>
         </div>
-
         <div class="row">
             <h5>Buddies?</h5>
             <form action="#">
@@ -71,20 +68,11 @@
         </div>
         <div align ="center" class="row">
             <h5>Got money to blow?</h5>
-            <form>
-                <p>
-                    <label>
-                      <input type="checkbox" />
-                      <span>Hell Yes!</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox" />
-                      <span>HELL no.</span>
-                    </label>
-                  </p>                  
-            </form>
+            <form action="#">
+                <p class="range-field">
+                  <input type="range" id="test5" min="0" max="1" />
+                </p>
+              </form>
         </div>
         <div align="center">
             <button class="btn waves-effect waves-light" type="submit" name="action">
@@ -93,6 +81,7 @@
         </div>
         
 </div>
+
     
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrFx8v_GDWLBsK5ji8OA4f4XAWUSqsDz0&libraries=places"></script>
