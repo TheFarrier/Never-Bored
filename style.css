@@ -2,8 +2,12 @@ body {
   align-items: center;
   background-color:#5f2eb4;
   color: white;
-  text-shadow: black 1px 1px;
+  text-shadow: black 2px 2px;
   
+}
+
+#banner {
+    background-color: #26a69a;
 }
 
 .headerTitle {

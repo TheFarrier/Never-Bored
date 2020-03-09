@@ -5,6 +5,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/style.css">
+    <!--animate css-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <!--materialze-->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
     <!--font awesome-->
@@ -14,94 +16,95 @@
 
 <body>
 
-    <h1 align="center">Never Be Bored Again!</h1>
+<h1 align="center" class="animated bounce infinite slower delay-2s headerTitle">Never Be Bored Again!</h1>
 <div class="container activityTypes">
-        <div align="center" class="row">
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Educational <i class="fas fa-school"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Recreational <i class="fas fa-running"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Social <i class="fas fa-user-friends"></i></a>
-
-            </div>
-        </div>
-        <div align="center" class="row">
-            <div class="col s4 types">
-
-                <a class="waves-effect waves-light btn-large">DIY <i class="fas fa-tools"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Charity <i class="fas fa-hands-helping"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Cooking <i class="fas fa-utensils"></i></a>
-
-            </div>
-        </div>
-        <div align="center" class="row">
-            <div class="col s4 types">
-
-                <a class="waves-effect waves-light btn-large">Relaxation <i class="fas fa-peace"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Musical <i class="fas fa-music"></i></a>
-            </div>
-            <div class="col s4 types">
-                <a class="waves-effect waves-light btn-large">Busywork <i class="fas fa-user-clock"></i></a>
-
-            </div>
-        </div>
+    <form action="#">
+        <p>
+          <label>
+            <input name="activity" type="radio" value="education" />
+            <span>Educational</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="activity" type="radio" value="recreational"  />
+            <span>Recreational</span>
+          </label>
+        </p>
+        <p>
+          <label>
+            <input name="activity" type="radio" value="social"  />
+            <span>Social</span>
+          </label>
+        </p>
+        <p>
+            <label>
+              <input name="activity" type="radio" value="diy"  />
+              <span>DIY</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="activity" type="radio" value="charity"  />
+              <span>Charity</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="activity" type="radio" value="cooking" />
+              <span>Cooking</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="activity" type="radio" value="relaxation" />
+              <span>Relaxation</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="activity" type="radio" value="music" />
+              <span>Musical</span>
+            </label>
+          </p>
+          <p>
+            <label>
+              <input name="activity" type="radio" value="busywork" />
+              <span>Busywork</span>
+            </label>
+          </p>
         <div class="row">
-            <div class="input-field col s6">
-                <input id="zip-code" type="text" class="validate">
-                <label for="zip-code">Enter Your Zip</label>
+            <div class="input-field col s4">
+                <input id="zip-code" type="text">
+                <label for="zip-code">Enter Your Zipcode</label>
             </div>
         </div>
-
         <div class="row">
             <h5>Buddies?</h5>
-            <form action="#">
                 <p class="range-field">
-                  <input type="range" id="test5" min="0" max="2" />
+                  <input type="range" id="buddySlide" min="0" max="2" />
                 </p>
-              </form>
+              
         </div>
         <div align ="center" class="row">
             <h5>Got money to blow?</h5>
-            <form>
-                <p>
-                    <label>
-                      <input type="checkbox" />
-                      <span>Hell Yes!</span>
-                    </label>
-                  </p>
-                  <p>
-                    <label>
-                      <input type="checkbox" />
-                      <span>HELL no.</span>
-                    </label>
-                  </p>                  
-            </form>
+            <h6 align = "left">Not really...</h6>
+            <h6 align = "right">Sure!</h6>
+                <p class="range-field">
+                  <input type="range" id="moneySlide" min="0" max="1" />
+                </p>
         </div>
         <div align="center">
             <button class="btn waves-effect waves-light" type="submit" name="action">
-                <i class="material-icons right">Boredom Be Gone!</i>
+                <i class="material-icons">Boredom Be Gone!</i>
               </button>
         </div>
-        
+    </form> 
 </div>
-    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrFx8v_GDWLBsK5ji8OA4f4XAWUSqsDz0&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/script.js"></script>
-    <!--materialize-->
-    
-    
-
 </body>
 
 </html>
