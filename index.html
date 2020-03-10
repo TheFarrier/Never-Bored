@@ -24,14 +24,9 @@
   </head>
 
   <body class="index center-align">
-    <h1
-      
-      class="animated bounce infinite slower delay-2s headerTitle"
-    >
-      Never Be Bored Again!
-    </h1>
+    <h1 class="animated bounce infinite slower delay-2s headerTitle">Never Be Bored Again!</h1>
     <div class="container activityTypes">
-      <form action="#">
+      <form id="mainForm" action="results.html" method="get">
         <div class="row">
           <div class="col s4">
             <p>
@@ -94,25 +89,27 @@
             </p>
           </div>
         </div>
+
         <div class="row">
-          <div class="input-field col s4">
-            <input id="zip-code" type="text" />
-            <label for="zip-code">Enter Your Zipcode</label>
-          </div>
+            <div class="input-field col s4">
+                <input id="zip-code" type="text" name="zipcode">
+                <label for="zip-code">Enter Your Zipcode</label>
+            </div>
         </div>
         <div class="row">
-          <h5>Buddies?</h5>
-          <p class="range-field">
-            <input type="range" id="buddySlide" min="0" max="2" />
-          </p>
+            <h5>Buddies?</h5>
+                <p class="range-field">
+                  <input type="range" id="buddySlide" min="0" max="2" name="buddies" />
+                </p>
+              
         </div>
         <div class="row">
-          <h5>Got money to blow?</h5>
-          <span class="col s6 left-align">Not really...</span>
-          <span class="col s6 right-align">Sure!</span>
-          <p class="range-field">
-            <input type="range" id="moneySlide" min="0" max="1" />
-          </p>
+            <h5>Got money to blow?</h5>
+            <span class="col s6 left-align">Not really...</span>
+            <span class="col s6 right-align">Sure!</span>
+                <p class="range-field">
+                  <input type="range" id="moneySlide" min="0" max="1" step="0.05" value="0.5" name="money" />
+                </p>
         </div>
         <div>
           <button

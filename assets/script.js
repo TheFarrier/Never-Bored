@@ -1,51 +1,27 @@
-//sound effects for when an activity buttons is selected
-var selectedBtn = $(".btn-large");
-//event listener for button click
 
-console.log(document.parentElement);
 
-selectedBtn.click(function btnSelected () {
-  $("audio#click")[0].play()
-  $(this).removeClass("waves-light")
-  $(this).addClass("lime lighten-1")
- })
- 
-//-- function for when the educational button is clicked --//
-$(".educational").on('click', function(){
-  alert("education");
-});
-//-- function for when the recreational button is clicked --//
-$(".recreational").on('click', function(){
-  alert("recreational");
-});
-//-- function for when the social button is clicked --//
-$(".social").on('click', function(){
-  alert("social");
-});
-//--  function for when the DIY button is clicked--//
-$(".diy").on('click', function(){
-  alert("diy");
-});
-//-- function for when the charity button is clicked --//
-$(".charity").on('click', function(){
-  alert("charity");
-});
-//-- funtion for when the cooking button is clicked --//
-$(".cooking").on('click', function(){
-  alert("cooking");
-});
-//--  function for when the relaxation button is clicked --//
-$(".relaxation").on('click', function(){
-  alert("relaxarion");
-});
-//-- function for the musical is clicked --//
-$(".musical").on('click', function(){
-  alert("musical");
-});
-//-- function for the busywork is clicked --//
-$(".busywork").on('click', function(){
-  alert("busywork");
-});
+// $("#mainForm").on("submit",function(event){
+// event.preventDefault();
+// activities= $('input[name="activity"]:checked').val();
+// zipcode= $("#zip-code").val();
+// buddySlide=$("#buddySlide").val();
+// moneySlide=$("#moneySlide").val();
+// console.log(activities);
+// console.log(zipcode);
+// console.log(buddySlide);
+// console.log(moneySlide);
+// location.replace("results.html");
+// });
+
+var urlParams = new URLSearchParams(window.location.search);
+
+var activities = urlParams.get("activity");
+var zipcode = urlParams.get("zipcode");
+var buddies = urlParams.get("buddies");
+var money = urlParams.get("money");
+
+
+
 //-- function for the input box --//
 
 var boredResponse;
@@ -74,7 +50,6 @@ if(sPage == "results.html"){
   var map;
   var service;
   var infowindow;
-  var zipcode = '78253';
   var local;
   
   function initialize() {
