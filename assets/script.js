@@ -1,18 +1,4 @@
 
-
-// $("#mainForm").on("submit",function(event){
-// event.preventDefault();
-// activities= $('input[name="activity"]:checked').val();
-// zipcode= $("#zip-code").val();
-// buddySlide=$("#buddySlide").val();
-// moneySlide=$("#moneySlide").val();
-// console.log(activities);
-// console.log(zipcode);
-// console.log(buddySlide);
-// console.log(moneySlide);
-// location.replace("results.html");
-// });
-
 var urlParams = new URLSearchParams(window.location.search);
 
 var activities = urlParams.get("activity");
@@ -20,8 +6,6 @@ var zipcode = urlParams.get("zipcode");
 var buddies = urlParams.get("buddies");
 var maxPrice = urlParams.get("maxPrice");
 var minPrice = urlParams.get("minPrice");
-
-
 
 //-- function for the input box --//
 
@@ -38,6 +22,7 @@ return $.ajax({
 .then(function(response) {
     console.log(response);
     boredResponse = response;
+    $("#randomActivity").text(response.activity);
 });
 }
 
@@ -72,8 +57,7 @@ function initialize() {
 
   });
 
-  
-}
+};
 
 
 
@@ -92,7 +76,7 @@ function callback(results, status) {
       var infowindow = new google.maps.InfoWindow({
           title: place.name,
           maxWidth: 200,
-      })
+      });
     
       var content = '<div id="content">'+
       '<h5>'+ place.name +'</h5>' +
@@ -106,7 +90,7 @@ function callback(results, status) {
         };
         })(marker,content,infowindow)); 
       
-    }
+    };
   } else if (failcount === 0){
     failcount = 1;
     request = {
@@ -119,7 +103,7 @@ function callback(results, status) {
     alert("No locations found")
   };
 
-}
+};
 // ---------------------------------------Google Maps----------------------------------
 callBored().then(function(){
   initialize();
