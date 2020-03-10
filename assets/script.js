@@ -27,8 +27,8 @@ var money = urlParams.get("money");
 var boredResponse;
 
 function callBored(){
-    var queryURL = "http://www.boredapi.com/api/activity/";
-
+    var queryURL = "http://www.boredapi.com/api/activity?type="+activities+"&participants="+buddies+"&price="+money;
+console.log(queryURL)
 return $.ajax({
     url: queryURL,
     method: "GET"
