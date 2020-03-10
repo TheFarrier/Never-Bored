@@ -53,7 +53,7 @@ var boredResponse;
 function callBored(){
     var queryURL = "http://www.boredapi.com/api/activity/";
 
-$.ajax({
+return $.ajax({
     url: queryURL,
     method: "GET"
 })
@@ -74,13 +74,13 @@ if(sPage == "results.html"){
   var map;
   var service;
   var infowindow;
-  var address = '78253';
+  var zipcode = '78253';
   var local;
   
   function initialize() {
     var geocoder = new google.maps.Geocoder();
     
-    geocoder.geocode({'address': address}, function(results){
+    geocoder.geocode({'address': zipcode}, function(results){
       console.log(results);
       local = results[0].geometry.location
       console.log(local);
@@ -123,8 +123,8 @@ if(sPage == "results.html"){
         })
       
         var content = '<div id="content">'+
-        '<h1>'+ place.name +'</h1>' +
-        '<h3>'+ place.formatted_address +'</h3>' +
+        '<h5>'+ place.name +'</h5>' +
+        '<p>'+ place.formatted_address +'</p>' +
         '</div>';
   
         google.maps.event.addListener(marker,'click', (function(marker,content,infowindow){ 
@@ -149,7 +149,8 @@ if(sPage == "results.html"){
   
   }
   // ---------------------------------------Google Maps----------------------------------
-  callBored();
-  initialize();
+  callBored().then(function(){
+    initialize();
+  });
 
 };
