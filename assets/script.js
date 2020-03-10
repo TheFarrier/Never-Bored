@@ -1,16 +1,24 @@
 
-$("#mainForm").on("submit",function(event){
-event.preventDefault();
-var activities= $('input[name="activity"]:checked').val();
-var zipcode= $("#zip-code").val();
-var buddySlide=$("#buddySlide").val();
-var moneySlide=$("#moneySlide").val();
-console.log(activities);
-console.log(zipcode);
-console.log(buddySlide);
-console.log(moneySlide);
 
-});
+// $("#mainForm").on("submit",function(event){
+// event.preventDefault();
+// activities= $('input[name="activity"]:checked').val();
+// zipcode= $("#zip-code").val();
+// buddySlide=$("#buddySlide").val();
+// moneySlide=$("#moneySlide").val();
+// console.log(activities);
+// console.log(zipcode);
+// console.log(buddySlide);
+// console.log(moneySlide);
+// location.replace("results.html");
+// });
+
+var urlParams = new URLSearchParams(window.location.search);
+
+var activities = urlParams.get("activity");
+var zipcode = urlParams.get("zipcode");
+var buddies = urlParams.get("buddies");
+var money = urlParams.get("money");
 
 
 
@@ -42,7 +50,6 @@ if(sPage == "results.html"){
   var map;
   var service;
   var infowindow;
-  var zipcode = '78253';
   var local;
   
   function initialize() {
