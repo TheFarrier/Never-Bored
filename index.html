@@ -18,7 +18,7 @@
 
 <h1 align="center" class="animated bounce infinite slower delay-2s headerTitle">Never Be Bored Again!</h1>
 <div class="container activityTypes">
-    <form  id="mainForm" action="#">
+    <form  id="mainForm" action="results.html" method="get">
         <p>
           <label>
             <input name="activity" type="radio" value="education" />
@@ -75,14 +75,14 @@
           </p>
         <div class="row">
             <div class="input-field col s4">
-                <input id="zip-code" type="text">
+                <input id="zip-code" type="text" name="zipcode">
                 <label for="zip-code">Enter Your Zipcode</label>
             </div>
         </div>
         <div class="row">
             <h5>Buddies?</h5>
                 <p class="range-field">
-                  <input type="range" id="buddySlide" min="0" max="2" />
+                  <input type="range" id="buddySlide" min="0" max="2" name="buddies" />
                 </p>
               
         </div>
@@ -91,7 +91,7 @@
             <h6 align = "left">Not really...</h6>
             <h6 align = "right">Sure!</h6>
                 <p class="range-field">
-                  <input type="range" id="moneySlide" min="0" max="1" />
+                  <input type="range" id="moneySlide" min="0" max="10" name="money" />
                 </p>
         </div>
         <div align="center">
