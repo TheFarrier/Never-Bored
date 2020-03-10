@@ -1,9 +1,22 @@
-body {
+.index {
   align-items: center;
   background-color:#5f2eb4;
   color: white;
   text-shadow: black 1px 1px;
   
+}
+
+.index2 {
+  background-color:#5f2eb4;
+}
+
+#resultsBanner {
+  background-color: #26a69a;
+  padding: 10px;
+}
+
+.resultStyle {
+  color: white;
 }
 
 .headerTitle {
@@ -26,7 +39,7 @@ body {
 }
 
 [type="radio"]:checked+span:after {
-    background-color: #5a5a5a;
+    background-color: orange;
 }
 
 
