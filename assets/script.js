@@ -9,6 +9,8 @@ console.log(activities);
 console.log(zipcode);
 console.log(buddySlide);
 console.log(moneySlide);
+location.replace("results.html");
+
 
 });
 
