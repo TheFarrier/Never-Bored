@@ -38,8 +38,20 @@
   color: orange;
 }
 
-[type="radio"]:checked+span:after {
-    background-color: orange;
+[type="radio"]:not(:checked)+span, [type="radio"]:checked+span {
+    padding-left: 16px;
 }
 
+[type="radio"]:checked+span {
+    background-color:green;
+}
+
+[type="radio"]+span:after,
+[type="radio"]:checked+span:after {
+    display: none;
+}
+
+[type="radio"]+span:before {
+    display: none;
+}
 
