@@ -1,78 +1,95 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="assets/style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!--animate css-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css"
+    />
     <!--materialze-->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <!--my style-->
+    <link rel="stylesheet" href="assets/style.css" />
     <!--font awesome-->
-    <script src="https://kit.fontawesome.com/4e035445ec.js" crossorigin="anonymous"></script>
+    <script
+      src="https://kit.fontawesome.com/4e035445ec.js"
+      crossorigin="anonymous"
+    ></script>
     <title>Never Bored!</title>
-</head>
+  </head>
 
-<body>
+  <body class="index center-align">
+    <h1 class="animated bounce infinite slower delay-2s headerTitle">Never Be Bored Again!</h1>
+    <div class="container activityTypes">
+      <form id="mainForm" action="results.html" method="get">
+        <div class="row">
+          <div class="col s4">
+            <p>
+              <label>
+                <input name="activity" type="radio" value="education" />
+                <span class="waves-effect waves-light btn">Educational</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="recreational" />
+                <span class="waves-effect waves-light btn">Recreational</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="social" />
+                <span class="waves-effect waves-light btn">Social</span>
+              </label>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <label>
+                <input name="activity" type="radio" value="diy" />
+                <span class="waves-effect waves-light btn">DIY</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="charity" />
+                <span class="waves-effect waves-light btn">Charity</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="cooking" />
+                <span class="waves-effect waves-light btn">Cooking</span>
+              </label>
+            </p>
+          </div>
+          <div class="col s4">
+            <p>
+              <label>
+                <input name="activity" type="radio" value="relaxation" />
+                <span class="waves-effect waves-light btn">Relaxation</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="music" />
+                <span class="waves-effect waves-light btn">Musical</span>
+              </label>
+            </p>
+            <p>
+              <label>
+                <input name="activity" type="radio" value="busywork" />
+                <span class="waves-effect waves-light btn">Busywork</span>
+              </label>
+            </p>
+          </div>
+        </div>
 
-<h1 align="center" class="animated bounce infinite slower delay-2s headerTitle">Never Be Bored Again!</h1>
-<div class="container activityTypes">
-    <form  id="mainForm" action="results.html" method="get">
-        <p>
-          <label>
-            <input name="activity" type="radio" value="education" />
-            <span class="waves-effect waves-light btn">Educational</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="activity" type="radio" value="recreational"  />
-            <span class="waves-effect waves-light btn">Recreational</span>
-          </label>
-        </p>
-        <p>
-          <label>
-            <input name="activity" type="radio" value="social"  />
-            <span class="waves-effect waves-light btn">Social</span>
-          </label>
-        </p>
-        <p>
-            <label>
-              <input name="activity" type="radio" value="diy"  />
-              <span class="waves-effect waves-light btn">DIY</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="activity" type="radio" value="charity"  />
-              <span class="waves-effect waves-light btn">Charity</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="activity" type="radio" value="cooking" />
-              <span class="waves-effect waves-light btn">Cooking</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="activity" type="radio" value="relaxation" />
-              <span class="waves-effect waves-light btn">Relaxation</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="activity" type="radio" value="music" />
-              <span class="waves-effect waves-light btn">Musical</span>
-            </label>
-          </p>
-          <p>
-            <label>
-              <input name="activity" type="radio" value="busywork" />
-              <span class="waves-effect waves-light btn">Busywork</span>
-            </label>
-          </p>
         <div class="row">
             <div class="input-field col s4">
                 <input id="zip-code" type="text" name="zipcode">
@@ -86,25 +103,28 @@
                 </p>
               
         </div>
-        <div align ="center" class="row">
+        <div class="row">
             <h5>Got money to blow?</h5>
-            <h6 align = "left">Not really...</h6>
-            <h6 align = "right">Sure!</h6>
+            <span class="col s6 left-align">Not really...</span>
+            <span class="col s6 right-align">Sure!</span>
                 <p class="range-field">
                   <input type="range" id="moneySlide" min="0" max="1" step="0.05" value="0.5" name="money" />
                 </p>
         </div>
-        <div align="center">
-            <button class="btn waves-effect waves-light" type="submit" name="action">
-                <i class="material-icons">Boredom Be Gone!</i>
-              </button>
+        <div>
+          <button
+            class="btn waves-effect waves-light"
+            type="submit"
+            name="action"
+          >
+            <i class="material-icons">Boredom Be Gone!</i>
+          </button>
         </div>
-    </form> 
-</div>
+      </form>
+    </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBrFx8v_GDWLBsK5ji8OA4f4XAWUSqsDz0&libraries=places"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
     <script src="assets/script.js"></script>
-</body>
-
+  </body>
 </html>
